@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Flash Page</title>
+    <style>
+        /* Body Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #333333;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #FF0000;
+            padding: 20px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            border-bottom: 5px solid #FFFF00;
+        }
+
+        .flash-button:hover {
+            background-color: #FFFF00;
+            color: #000000;
+            box-shadow: 0 0 30px #FF0000;
+            transform: scale(1.1);
+        }
+
+        /* Main Content Area */
+        .content {
+            padding: 40px;
+            background-color: #222222;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Flash Animation Effect */
+        .flash-text {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #FFCC00;
+            animation: flash-animation 1.5s infinite alternate;
+            margin-bottom: 20px;
+        }
+
+        @keyframes flash-animation {
+            0% {
+                color: #FFCC00;
+            }
+            50% {
+                color: #FF0000;
+            }
+            100% {
+                color: #00FF00;
+            }
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #000000;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            color: white;
+            font-size: 1rem;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Image Gallery Section */
+        .image-gallery {
+            margin-top: 30px;
+        }
+
+        .image-gallery h2 {
+            color: #FFCC00;
+            margin-bottom: 15px;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #FFFF00;
+            transition: 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #FF0000;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    Welcome to My Flash Page!
+</header>
+
+<div class="content">
+    <h1 class="flash-text">Flash Back to the '90s!</h1>
+    <p>Welcome to the coolest Flash-inspired retro page! This website is an homage to the vibrant, animated world of Flash, filled with bright colors, interactive elements, and dynamic animations.</p>
+
+    <div class="image-gallery">
+        <h2>Some Flash Animations</h2>
+        <img src="https://www.bing.com/th/id/OGC.bc28c373c8c74d742bbb026b3e47d266?pid=1.7&rurl=https%3a%2f%2fclipart-library.com%2fimages%2fkiKBe7LRT.gif&ehk=wrOeAYwZhlkhDf7JtqhOnfSfu%2frgTz3wZ%2f1tQvaNc7I%3d" alt="Flash Animation 1">
+        <img src="https://www.bing.com/th/id/OGC.3e713d42148f22388a6db6a61bafe2b6?pid=1.7&rurl=https%3a%2f%2fcdna.artstation.com%2fp%2fassets%2fimages%2fimages%2f010%2f008%2f374%2foriginal%2fmanohar-soans-recover-character-bgfinalgif.gif%3f1522072870&ehk=%2fUX7gegzaFzBeCIAa9MP9yPP3iVZXDQYEgka77%2fFye4%3d" alt="Flash Animation 2">
+        <img src="https://www.bing.com/th/id/OGC.b8c0e6acd7fc2431661e9e397ad06f72?pid=1.7&rurl=https%3a%2f%2fclipart-library.com%2fimages%2f8i65qryMT.gif&ehk=gZ7PDldfT1%2bJye95zoXcqJuSxq%2bBFBQOrnP8Row4vDg%3d" alt="Flash Animation 3">
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Hide content initially */
+.content {
+    display: none;
+    text-align: center;
+}
+
+/* Title styling */
+.title {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #4285f4;
+    margin: 0;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5), -3px -3px 10px rgba(0, 0, 0, 0.5);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* Individual colorful letters */
+.google-letter {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.google-letter.g { color: #fbbc05; }
+.google-letter.o { color: #ea4335; }
+.google-letter.g { color: #fbbc05; }
+.google-letter.l { color: #34a853; }
+.google-letter.e { color: #4285f4; }
+
+/* Search box and button */
+.search-container {
+    margin-top: 50px;
+}
+
+.search-box-container {
+    margin-bottom: 20px;
+}
+
+.search-box {
+    width: 500px;
+    height: 40px;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #dcdcdc;
+    border-radius: 24px;
+    outline: none;
+}
+
+.search-button {
+    background-color: #f8f8f8;
+    border: 1px solid #dcdcdc;
+    border-radius: 24px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.search-button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Lucky button */
+.lucky-container {
+    margin-top: 20px;
+}
+
+.lucky-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+.lucky-button:hover {
+    background-color: #e07b00;
+}
+
+/* Extra images */
+.extra-images {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.extra-image {
+    margin: 10px;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+/* Search results section */
+.search-results {
+    margin-top: 30px;
+}
+
+.search-result {
+    margin-bottom: 15px;
+}
+
+.search-result h3 {
+    color: #1a0dab;
+    text-decoration: none;
+}
+
+.search-result p {
+    color: #545454;
+}
+
+.related-searches {
+    margin-top: 30px;
+    color: #4d4d4d;
+}
+
+.related-searches a {
+    color: #1a0dab;
+    text-decoration: none;
+}
+
+.related-searches a:hover {
+    text-decoration: underline;
+
+    /* Make the layout responsive */
+    @media screen and (max-width: 600px) {
+        .search-box {
+            width: 80%;
+        }
+
+        .search-button,
+        .lucky-button {
+            width: 80%;
+        }
+
+        .extra-image {
+            max-width: 150px;
+            max-height: 150px;
+        }
+    }}

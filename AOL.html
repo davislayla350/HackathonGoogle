@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AOL Instant Messenger</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00FF00;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .chat-box {
+            background-color: #111;
+            border: 2px solid #00FF00;
+            padding: 10px;
+            margin: 20px;
+            width: 80%;
+            height: 300px;
+            overflow-y: scroll;
+            text-align: left;
+        }
+        .message {
+            margin: 5px;
+        }
+        .message.user {
+            color: #FF6347;
+        }
+        .message.bot {
+            color: #00BFFF;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+        .input-area {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        .input-area input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #00FF00;
+            background-color: #222;
+            color: #00FF00;
+        }
+        .input-area button {
+            padding: 10px;
+            background-color: #00FF00;
+            border: none;
+            cursor: pointer;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>AOL Instant Messenger - Chat</h1>
+</header>
+
+<div class="chat-box" id="chat-box">
+    <div class="message bot">AOL Bot: Welcome to AOL Instant Messenger!</div>
+</div>
+
+<div class="input-area">
+    <input type="text" id="user-input" placeholder="Type your message...">
+    <button id="send-button">Send</button>
+</div>
+
+<footer>
+    <p>&copy; 1999 AOL Instant Messenger</p>
+</footer>
+
+<script>
+    const chatBox = document.getElementById('chat-box');
+    const userInput = document.getElementById('user-input');
+    const sendButton = document.getElementById('send-button');
+
+    const botResponses = {
+        music: "AOL Bot: I love music! What's your favorite genre?",
+        games: "AOL Bot: Video games were all the rage in the '90s! Do you have a favorite?",
+        movies: "AOL Bot: Movies back then were iconic! Have you seen any classics recently?",
+        internet: "AOL Bot: The internet was evolving so fast! What do you think about it?",
+        friends: "AOL Bot: Friends are the best! Do you have a close-knit group?",
+    };
+
+    sendButton.addEventListener('click', function() {
+        const messageText = userInput.value.trim();
+        if (messageText) {
+            // Display user message
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('message', 'user');
+            userMessage.textContent = `You: ${messageText}`;
+            chatBox.appendChild(userMessage);
+            userInput.value = ''; // Clear input field
+
+            // Generate bot response based on keywords
+            const response = generateBotResponse(messageText);
+            setTimeout(() => {
+                const botMessage = document.createElement('div');
+                botMessage.classList.add('message', 'bot');
+                botMessage.textContent = response;
+                chatBox.appendChild(botMessage);
+                chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom
+            }, 1000);
+        }
+    });
+
+    function generateBotResponse(message) {
+        const lowerCaseMessage = message.toLowerCase();
+        for (const keyword in botResponses) {
+            if (lowerCaseMessage.includes(keyword)) {
+                return botResponses[keyword];
+            }
+        }
+        return "AOL Bot: I'm not sure how to respond to that.";
+    }
+</script>
+
+</body>
+</html>

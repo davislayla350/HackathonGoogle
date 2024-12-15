@@ -1,0 +1,154 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySpace Retro</title>
+    <style>
+        body {
+            background-color: #1bff00;
+            color: #000000;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #fffc00;
+            padding: 10px;
+        }
+        .profile-container {
+            margin: 20px auto;
+            width: 80%;
+            background-color: #fc00ff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .profile-pic {
+            width: 150px;
+            border-radius: 50%;
+        }
+        .friends-list {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .friend {
+            margin: 10px;
+            width: 100px;
+            height: 100px;
+        }
+        .friend img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        .friend-name {
+            color: #ecf0f1;
+            margin-top: 5px;
+        }
+        footer {
+            background-color: #fffc00;
+            padding: 10px;
+        }
+        .music-player {
+            margin-top: 20px;
+            background-color: #fffc00;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .message-board {
+            margin-top: 20px;
+            background-color: #dc91b9;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .message-board input {
+            width: 80%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .message-board button {
+            padding: 5px;
+            background-color: #fc00ff;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+        .messages {
+            max-height: 100px;
+            overflow-y: auto;
+            text-align: left;
+        }
+        .message {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to MySpace</h1>
+</header>
+
+<div class="profile-container">
+    <img src="pro.jpg" alt="Profile Picture" class="profile-pic">
+    <h2>LayLa' Awesomes</h2>
+    <p>Welcome to my personal MySpace page. Here's a list of my friends!</p>
+
+    <div class="friends-list">
+        <div class="friend" onclick="showFriend('Friend 1')">
+            <img src="https://th.bing.com/th/id/OIP.P-qVbs381KnUX3UNCJU2kQAAAA?rs=1&pid=ImgDetMain" alt="justin">
+            <div class="friend-name">Justin</div>
+        </div>
+        <div class="friend" onclick="showFriend('Friend 2')">
+            <img src="https://th.bing.com/th?id=OIP.Uk2tgyDLOj6SJRn-Lfnf_gHaJ4&w=216&h=288&c=8&rs=1&qlt=90&o=6&dpr=1.4&pid=3.1&rm=2" alt="montana">
+            <div class="friend-name">Hannah</div>
+        </div>
+        <div class="friend" onclick="showFriend('Friend 3')">
+            <img src="https://th.bing.com/th/id/OIP.2WOt_vOHnZ3bTtrSN2V7TwHaJm?w=185&h=240&c=7&r=0&o=5&dpr=1.4&pid=1.7" alt="troy">
+            <div class="friend-name">Troy</div>
+        </div>
+        <!-- Add more friends here -->
+    </div>
+
+    <div class="music-player">
+        <h3>Now Playing:</h3>
+        <audio id="music-player" controls autoplay>
+            <source src="/audio/Revenge.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+    <div class="message-board">
+        <h3>Leave a Message:</h3>
+        <input type="text" id="message-input" placeholder="Type your message here...">
+        <button onclick="addMessage()">Send</button>
+        <div class="messages" id="messages"></div>
+    </div>
+</div>
+
+<script>
+    function showFriend(friendName) {
+        alert(`You clicked on ${friendName}!`);
+    }
+
+    function addMessage() {
+        const messageInput = document.getElementById('message-input');
+        const messagesDiv = document.getElementById('messages');
+
+        if (messageInput.value.trim() !== '') {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.textContent = messageInput.value;
+            messagesDiv.appendChild(messageDiv);
+            messageInput.value = ''; // Clear input field
+            messagesDiv.scrollTop = messagesDiv.scrollHeight; // Scroll to the bottom
+        }
+    }
+</script>
+
+</body>
+</html>

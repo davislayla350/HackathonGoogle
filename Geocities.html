@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GeoCities Retro Page</title>
+    <style>
+        /* General Body Styling */
+        body {
+            background-color: #00FFFF;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #FF00FF;
+            text-align: center;
+            padding: 30px;
+            color: white;
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+            border-bottom: 5px solid #0000FF;
+        }
+
+        /* Navigation Menu */
+        nav {
+            text-align: center;
+            background-color: #FF9900;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        nav a {
+            color: #0000FF;
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #FF0000;
+            text-decoration: underline;
+        }
+
+        /* Content */
+        .content {
+            background-color: #FFFFFF;
+            margin: 30px auto;
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            border: 2px solid #FF00FF;
+            border-radius: 10px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #FF00FF;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            padding: 0 10px;
+        }
+
+        /* Table Layout for Content */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #FF00FF;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        th {
+            background-color: #FFCC00;
+            color: #000;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0000FF;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Marquee Effect */
+        .marquee {
+            font-size: 1.5rem;
+            color: #FF0000;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+            padding: 10px 0;
+        }
+
+        .marquee span {
+            display: inline-block;
+            animation: marquee-animation 10s linear infinite;
+        }
+
+        @keyframes marquee-animation {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Welcome to My GeoCities Page!
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About Me</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="content">
+    <h2>About Me</h2>
+    <p>This is my little corner of the internet where I share all sorts of fun stuff. Check out the table below to see some of my favorite Pokémon!</p>
+
+    <div class="marquee">
+        <span>Check out my cool Pokémon collection!</span>
+    </div>
+
+    <table>
+        <tr>
+            <th>Pokémon</th>
+            <th>Type</th>
+            <th>Level</th>
+        </tr>
+        <tr>
+            <td>Bulbasaur</td>
+            <td>Grass/Poison</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Charmander</td>
+            <td>Fire</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Squirtle</td>
+            <td>Water</td>
+            <td>5</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
