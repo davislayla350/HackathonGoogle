@@ -1,294 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google</title>
-    <link rel="stylesheet" href="style.css">
+  <!-- Meta tags for character encoding and viewport settings -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <header>
-        <h1 class="title">
-            <span class="google-letter g">G</span>
-            <span class="google-letter o">o</span>
-            <span class="google-letter o">o</span>
-            <span class="google-letter g">g</span>
-            <span class="google-letter l">l</span>
-            <span class="google-letter e">e</span>
-        </h1>
-        <input type="text" class="search-box" placeholder="Search Google or type a URL">
-        <div class="buttons">
-            <button class="search-button" onclick="handleSearch()">Google Search</button>
-            <button class="lucky-button" onclick="luckySearch()">I'm Feeling Lucky</button>
-        </div>
-    </header>
+  <!-- Title of the web page, which appears in the browser tab -->
+  <title>Google</title>
 
-    <script>
-        async function setElementStyles(element, styles) {
-            for (const [property, value] of Object.entries(styles)) {
-                element.style[property] = value;
-            }
-        }
+  <!-- External CSS link to style the page -->
+  <link rel="stylesheet" href="style.css">
 
-        const fakePages = [
-            {
-                title: "Napster - Free Music Sharing",
-                url: "Napster.html",
-                description: "Discover music from the 2000s and the revolutionary file-sharing service.",
-                content: "Napster was a pioneering file-sharing service that changed the music industry in the late 1990s and early 2000s."
-            },
-            {
-                title: "AOL Instant Messenger (AIM)",
-                url: "AOL.html",
-                description: "The famous instant messaging platform that defined the late '90s."
-            },
-            {
-                title: "Y2K Bug and the Millennium Bug",
-                url: "y2k.html",
-                description: "Learn all about the Y2K bug and how it impacted the world."
-            },
-            {
-                title: "Windows 98 - Operating System",
-                url: "Windows.html",
-                description: "Check out the revolutionary Windows 98 operating system that changed everything."
-            },
-            {
-                title: "Pokémon Cards - The '90s Craze",
-                url: "Pokemon.html",
-                description: "Explore the world of Pokémon cards that became a pop culture phenomenon."
-            },
-            {
-                title: "The Tamagotchi Phenomenon",
-                url: "tomo.html",
-                description: "The digital pet that captivated children in the late '90s."
-            },
-            {
-                title: "GeoCities - Create Your Own Website",
-                url: "Geocities.html",
-                description: "A website building service that gave users the power to create their own web pages."
-            },
-            {
-                title: "MySpace - Social Network Revolution",
-                url: "mySpace.html",
-                description: "A social networking site that became a cultural phenomenon in the early 2000s."
-            },
-            {
-                title: "The World of Flash Animations",
-                url: "Flash.html",
-                description: "Remember the Flash animations that defined web culture in the early 2000s."
-            }
-        ];
+  <!-- Header section that includes the Google title, search box, and buttons -->
+  <header>
+    <h1 class="title">
+      <!-- Each letter of the word "Google" is wrapped in a span with its corresponding class for individual styling -->
+      <span class="google-letter g">G</span>
+      <span class="google-letter o">o</span>
+      <span class="google-letter o">o</span>
+      <span class="google-letter g">g</span>
+      <span class="google-letter l">l</span>
+      <span class="google-letter e">e</span>
+    </h1>
 
-        function handleSearch() {
-            const query = document.querySelector('.search-box').value;
-            if (query) {
-                displayFakeSearchResults(query);
-            }
-            document.querySelector('.search-results').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+    <!-- Search input box -->
+    <input type="text" class="search-box" placeholder="Search Google or type a URL">
 
-        function luckySearch() {
-            const button = document.querySelector('.lucky-button');
-            button.style.transition = 'transform 1s ease';
-            button.style.transform = 'rotate(360deg)';
-            setTimeout(() => {
-                button.style.transform = 'rotate(0deg)';
-            }, 1000);
+    <!-- Buttons for Google search and I'm Feeling Lucky actions -->
+    <div class="buttons">
+      <button class="search-button" onclick="handleSearch()">Google Search</button>
+      <button class="lucky-button" onclick="luckySearch()">I'm Feeling Lucky</button>
+    </div>
+  </header>
 
-            const randomPage = fakePages[Math.floor(Math.random() * fakePages.length)];
-            displayFakeSearchResults("Lucky Result: " + randomPage.title);
-            document.querySelector('.search-results').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+  <script>
+    // Async function to set styles dynamically on elements
+    async function setElementStyles(element, styles) {
+      for (const [property, value] of Object.entries(styles)) {
+        element.style[property] = value;
+      }
+    }
 
-        function displayFakeSearchResults(query) {
-            const resultsContainer = document.querySelector('.search-results');
-            resultsContainer.innerHTML = '';
-            const title = document.createElement('h2');
-            title.textContent = `Search Results for: ${query}`;
-            resultsContainer.appendChild(title);
+    // Array of fake pages to simulate search results
+    const fakePages = [
+      { title: "Napster - Free Music Sharing", url: "Napster.html", description: "Discover music from the 2000s and the revolutionary file-sharing service." },
+      { title: "AOL Instant Messenger (AIM)", url: "AOL.html", description: "The famous instant messaging platform that defined the late '90s." },
+      { title: "Y2K Bug and the Millennium Bug", url: "y2k.html", description: "Learn all about the Y2K bug and how it impacted the world." },
+      { title: "Windows 98 - Operating System", url: "Windows.html", description: "Check out the revolutionary Windows 98 operating system that changed everything." },
+      { title: "Pokémon Cards - The '90s Craze", url: "Pokemon.html", description: "Explore the world of Pokémon cards that became a pop culture phenomenon." },
+      { title: "The Tamagotchi Phenomenon", url: "tomo.html", description: "The digital pet that captivated children in the late '90s." },
+      { title: "GeoCities - Create Your Own Website", url: "Geocities.html", description: "A website building service that gave users the power to create their own web pages." },
+      { title: "MySpace - Social Network Revolution", url: "mySpace.html", description: "A social networking site that became a cultural phenomenon in the early 2000s." },
+      { title: "The World of Flash Animations", url: "Flash.html", description: "Remember the Flash animations that defined web culture in the early 2000s." }
+    ];
 
-            const randomResults = getRandomResults();
-            randomResults.forEach(page => {
-                const result = document.createElement('div');
-                result.classList.add('search-result');
-                result.innerHTML = `
-                    <a href="${page.url}" target="_blank"><h3>${page.title}</h3></a>
-                    <p>${page.description}</p>
-                `;
-                resultsContainer.appendChild(result);
-            });
+    // Handles a search action and displays search results
+    function handleSearch() {
+      const query = document.querySelector('.search-box').value;
+      if (query) {
+        displayFakeSearchResults(query);
+      }
+      document.querySelector('.search-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
-            const relatedSearches = document.createElement('div');
-            relatedSearches.classList.add('related-searches');
-            relatedSearches.innerHTML = `
-                <h3>Related Searches</h3>
-                <ul>
-                    <li><a href="#">Napster Alternatives</a></li>
-                    <li><a href="#">AOL Instant Messenger History</a></li>
-                    <li><a href="#">Y2K Bug Explained</a></li>
-                    <li><a href="#">Windows 98 Features</a></li>
-                    <li><a href="#">Pokémon Card Collecting</a></li>
-                </ul>
-            `;
-            resultsContainer.appendChild(relatedSearches);
-        }
+    // Handles the "I'm Feeling Lucky" action, shows a random result
+    function luckySearch() {
+      const button = document.querySelector('.lucky-button');
+      button.style.transition = 'transform 1s ease';
+      button.style.transform = 'rotate(360deg)';
+      setTimeout(() => {
+        button.style.transform = 'rotate(0deg)';
+      }, 1000);
 
-        function getRandomResults() {
-            const shuffledPages = fakePages.sort(() => 0.5 - Math.random());
-            return shuffledPages.slice(0, 6);
-        }
-    </script>
+      const randomPage = fakePages[Math.floor(Math.random() * fakePages.length)];
+      displayFakeSearchResults("Lucky Result: " + randomPage.title);
+      document.querySelector('.search-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Displays fake search results based on a search query
+    function displayFakeSearchResults(query) {
+      const resultsContainer = document.querySelector('.search-results');
+      resultsContainer.innerHTML = '';  // Clear previous results
+      const title = document.createElement('h2');
+      title.textContent = `Search Results for: ${query}`;
+      resultsContainer.appendChild(title);
+
+      const randomResults = getRandomResults();  // Get a random subset of fake pages
+      randomResults.forEach(page => {
+        const result = document.createElement('div');
+        result.classList.add('search-result');
+        result.innerHTML = `
+          <a href="${page.url}" target="_blank"><h3>${page.title}</h3></a>
+          <p>${page.description}</p>
+        `;
+        resultsContainer.appendChild(result);
+      });
+
+      // Display related search suggestions
+      const relatedSearches = document.createElement('div');
+      relatedSearches.classList.add('related-searches');
+      relatedSearches.innerHTML = `
+        <h3>Related Searches</h3>
+        <ul>
+          <li><a href="#">Napster Alternatives</a></li>
+          <li><a href="#">AOL Instant Messenger History</a></li>
+          <li><a href="#">Y2K Bug Explained</a></li>
+          <li><a href="#">Windows 98 Features</a></li>
+          <li><a href="#">Pokémon Card Collecting</a></li>
+        </ul>
+      `;
+      resultsContainer.appendChild(relatedSearches);
+    }
+
+    // Randomly shuffle the fake pages array and return a subset
+    function getRandomResults() {
+      const shuffledPages = fakePages.sort(() => 0.5 - Math.random());
+      return shuffledPages.slice(0, 6);
+    }
+  </script>
 </head>
 <body>
 <div class="content">
-    <h1 class="title">
-        <span class="google-letter g">G</span>
-        <span class="google-letter o">o</span>
-        <span class="google-letter o">o</span>
-        <span class="google-letter g">g</span>
-        <span class="google-letter l">l</span>
-        <span class="google-letter e">e</span>
-        <span class="google-letter e">!</span>
-    </h1>
+  <!-- Title 'Google' with animated letter styling -->
+  <h1 class="title">
+    <span class="google-letter g">G</span>
+    <span class="google-letter o">o</span>
+    <span class="google-letter o">o</span>
+    <span class="google-letter g">g</span>
+    <span class="google-letter l">l</span>
+    <span class="google-letter e">e</span>
+    <span class="google-letter e">!</span>
+  </h1>
 </div>
 
-
-
-
 <section class="extra-images">
-    <div class="photo-container">
-        <!-- Clinton Impeachment -->
-        <div class="image-card">
-            <h3>Latest Political Event: <b>Clinton Impeachment</b></h3>
-            <img src="https://th.bing.com/th/id/OIP.XEGh4_s0zM2v4X6EoZnVeAAAAA?w=302&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7" alt="Clinton Impeachment" class="image">
-            <p>President Bill Clinton was impeached by the House of Representatives on charges of perjury and obstruction of justice.</p>
-        </div>
-
-        <!-- Trending Celebrity -->
-        <div class="image-card">
-            <h3>Trending Celebrity: <b>Cher</b></h3>
-            <img src="https://th.bing.com/th/id/OIP.cfQThibsh68I4tPcnKqEIgHaHX?w=185&h=184&c=7&r=0&o=5&dpr=1.4&pid=1.7" alt="Cher Image" class="image">
-            <p>The most talked about celebrity is Cher! With her hit "Believe," she is breaking the charts.</p>
-        </div>
-
-        <!-- Retro Gadget -->
-        <div class="image-card">
-            <h3>Newest Technology: <b>1999 iPhone</b></h3>
-            <img src="https://th.bing.com/th/id/OIP.hpDNbPu5XVeX0VKJGKdybQHaFj?w=230&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7" alt="1999 iPhone" class="image">
-            <p>The world is in the palm of your hands. Stay up-to-date with the latest technology.</p>
-        </div>
+  <div class="photo-container">
+    <!-- Image cards displaying political events, celebrities, and technology -->
+    <div class="image-card">
+      <h3>Latest Political Event: <b>Clinton Impeachment</b></h3>
+      <img src="https://th.bing.com/th/id/OIP.XEGh4_s0zM2v4X6EoZnVeAAAAA?w=302&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7" alt="Clinton Impeachment" class="image">
+      <p>President Bill Clinton was impeached by the House of Representatives on charges of perjury and obstruction of justice.</p>
     </div>
-    <section class="search-results"></section>
+    <div class="image-card">
+      <h3>Trending Celebrity: <b>Cher</b></h3>
+      <img src="https://th.bing.com/th/id/OIP.cfQThibsh68I4tPcnKqEIgHaHX?w=185&h=184&c=7&r=0&o=5&dpr=1.4&pid=1.7" alt="Cher Image" class="image">
+      <p>The most talked about celebrity is Cher! With her hit "Believe," she is breaking the charts.</p>
+    </div>
+    <div class="image-card">
+      <h3>Newest Technology: <b>1999 iPhone</b></h3>
+      <img src="https://th.bing.com/th/id/OIP.hpDNbPu5XVeX0VKJGKdybQHaFj?w=230&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7" alt="1999 iPhone" class="image">
+      <p>The world is in the palm of your hands. Stay up-to-date with the latest technology.</p>
+    </div>
+  </div>
+
+  <!-- Search results section -->
+  <section class="search-results"></section>
 </section>
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f9f9f9;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 100vh;
-        overflow-x: hidden;
-    }
+  /* Global styles for body, title, and layout */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
 
-    .title {
-        font-size: 3.5rem;  /* Increased size */
-        font-weight: bold;
-        color: #4285f4;
-        margin: 0;
-    }
+  /* Title styling */
+  .title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #4285f4;
+    margin: 0;
+  }
 
-    .google-letter {
-        display: inline-block;
-    }
+  /* Google letters styling */
+  .google-letter {
+    display: inline-block;
+  }
 
-    .search-box-container {
-        display: flex;
-        gap: 10px; /* Space between buttons */
-        margin-top: 20px;
-    }
+  /* Button and other UI element styles */
+  .search-button, .lucky-button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: flashColors 2s infinite;
+  }
 
-    .search-button, .lucky-button {
-        padding: 10px 20px;
-        margin: 5px;
-        font-size: 16px;
-        background-color: #f2f2f2;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        animation: flashColors 2s infinite;
-    }
+  @keyframes flashColors {
+    0% { background-color: #fbbc05; }
+    25% { background-color: #ea4335; }
+    50% { background-color: #34a853; }
+    75% { background-color: #4285f4; }
+    100% { background-color: #fbbc05; }
+  }
 
-    @keyframes flashColors {
-        0% { background-color: #fbbc05; }
-        25% { background-color: #ea4335; }
-        50% { background-color: #34a853; }
-        75% { background-color: #4285f4; }
-        100% { background-color: #fbbc05; }
-    }
+  /* Search results and images styles */
+  .search-results {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+    background-color: #fff;
+  }
 
-    .search-results {
-        margin-top: 20px;
-        width: 100%;
-        max-width: 1000px;  /* Increased width */
-        padding: 20px;
-        background-color: #fff;
-    }
+  .extra-images {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
 
-    .extra-images {
-        display: flex;
-        justify-content: center;
-        margin: 40px 0px;
-        width: 100%;
-        flex-wrap: wrap;
-    }
+  .photo-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 80%;
+    max-width: 1000px;
+    margin-top: 20px;
+  }
 
-    .photo-container {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        width: 80%;
-        max-width: 1000px;
-        margin-top: 20px;
-    }
+  .image-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 250px;
+  }
 
-    .image-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Centers image and text */
-        text-align: center;  /* Ensures text alignment */
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 15px;
-        width: 250px;
-    }
+  .image-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
 
-    .image-card img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 10px;
-        border-radius: 8px;
-    }
+  .image-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
 
-    .image-card h3 {
-        font-size: 1.2rem;
-        margin: 10px 0;
-    }
-
-    .image-card p {
-        font-size: 1rem;
-        color: #555;
-    }
+  .image-card p {
+    font-size: 1rem;
+    color: #555;
+  }
 </style>
-
 </body>
 </html>

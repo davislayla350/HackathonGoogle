@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -44,6 +45,10 @@
             border-radius: 50%;
             object-fit: cover;
             cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .friend img:hover {
+            transform: scale(1.1);
         }
         .friend-name {
             color: #ecf0f1;
@@ -85,6 +90,21 @@
         .message {
             margin: 5px 0;
         }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .profile-container {
+                width: 95%;
+            }
+            .friend {
+                margin: 5px;
+                width: 80px;
+                height: 80px;
+            }
+            .profile-pic {
+                width: 120px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -99,15 +119,15 @@
     <p>Welcome to my personal MySpace page. Here's a list of my friends!</p>
 
     <div class="friends-list">
-        <div class="friend" onclick="showFriend('Friend 1')">
+        <div class="friend" onclick="showFriend('Justin')">
             <img src="https://th.bing.com/th/id/OIP.P-qVbs381KnUX3UNCJU2kQAAAA?rs=1&pid=ImgDetMain" alt="justin">
             <div class="friend-name">Justin</div>
         </div>
-        <div class="friend" onclick="showFriend('Friend 2')">
+        <div class="friend" onclick="showFriend('Hannah')">
             <img src="https://th.bing.com/th?id=OIP.Uk2tgyDLOj6SJRn-Lfnf_gHaJ4&w=216&h=288&c=8&rs=1&qlt=90&o=6&dpr=1.4&pid=3.1&rm=2" alt="montana">
             <div class="friend-name">Hannah</div>
         </div>
-        <div class="friend" onclick="showFriend('Friend 3')">
+        <div class="friend" onclick="showFriend('Troy')">
             <img src="https://th.bing.com/th/id/OIP.2WOt_vOHnZ3bTtrSN2V7TwHaJm?w=185&h=240&c=7&r=0&o=5&dpr=1.4&pid=1.7" alt="troy">
             <div class="friend-name">Troy</div>
         </div>
@@ -129,6 +149,10 @@
         <div class="messages" id="messages"></div>
     </div>
 </div>
+
+<footer>
+    <p>&copy; 2024 LayLa' Awesomes | <a href="mailto:layla@example.com">Contact Me</a></p>
+</footer>
 
 <script>
     function showFriend(friendName) {

@@ -1,44 +1,45 @@
+/* Reset default margin, padding, and box sizing for all elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Basic styling for body */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    text-align: center;
+    font-family: Arial, sans-serif; /* Global font family */
+    background-color: #fff;  /* White background for the page */
+    text-align: center;  /* Center-align text globally */
 }
 
-/* Hide content initially */
+/* Hide content initially (used for dynamic display in JS) */
 .content {
     display: none;
     text-align: center;
 }
 
-/* Title styling */
+/* Styling for the title */
 .title {
-    font-size: 5rem;
-    font-weight: bold;
-    color: #4285f4;
+    font-size: 5rem; /* Large title size */
+    font-weight: bold; /* Bold text */
+    color: #4285f4; /* Google blue color */
     margin: 0;
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5), -3px -3px 10px rgba(0, 0, 0, 0.5);
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5), -3px -3px 10px rgba(0, 0, 0, 0.5); /* Shadow for better readability */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun font choice for title */
 }
 
-/* Individual colorful letters */
+/* Individual letters with different colors */
 .google-letter {
     display: inline-block;
     font-weight: bold;
 }
 
-.google-letter.g { color: #fbbc05; }
-.google-letter.o { color: #ea4335; }
-.google-letter.g { color: #fbbc05; }
-.google-letter.l { color: #34a853; }
-.google-letter.e { color: #4285f4; }
+.google-letter.g { color: #fbbc05; } /* Yellow */
+.google-letter.o { color: #ea4335; } /* Red */
+.google-letter.l { color: #34a853; } /* Green */
+.google-letter.e { color: #4285f4; } /* Blue */
 
-/* Search box and button */
+/* Styling for the search box and buttons */
 .search-container {
     margin-top: 50px;
 }
@@ -67,11 +68,12 @@ body {
     margin-top: 10px;
 }
 
+/* Hover effect for search button */
 .search-button:hover {
     background-color: #f1f1f1;
 }
 
-/* Lucky button */
+/* Styling for lucky button */
 .lucky-container {
     margin-top: 20px;
 }
@@ -79,18 +81,19 @@ body {
 .lucky-button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #ff8c00;
+    background-color: #ff8c00; /* Orange color */
     color: white;
     border: none;
     border-radius: 24px;
     cursor: pointer;
 }
 
+/* Hover effect for lucky button */
 .lucky-button:hover {
-    background-color: #e07b00;
+    background-color: #e07b00; /* Darker orange on hover */
 }
 
-/* Extra images */
+/* Container for extra images below main content */
 .extra-images {
     display: flex;
     justify-content: center;
@@ -98,6 +101,7 @@ body {
     flex-wrap: wrap;
 }
 
+/* Individual image card styling */
 .extra-image {
     margin: 10px;
     max-width: 200px;
@@ -114,40 +118,43 @@ body {
 }
 
 .search-result h3 {
-    color: #1a0dab;
+    color: #1a0dab; /* Purple link color */
     text-decoration: none;
 }
 
 .search-result p {
-    color: #545454;
+    color: #545454; /* Grey text color */
 }
 
+/* Related searches section */
 .related-searches {
     margin-top: 30px;
-    color: #4d4d4d;
+    color: #4d4d4d; /* Dark grey for related searches section */
 }
 
 .related-searches a {
-    color: #1a0dab;
+    color: #1a0dab; /* Link color for related searches */
     text-decoration: none;
 }
 
+/* Hover effect for related search links */
 .related-searches a:hover {
     text-decoration: underline;
+}
 
-    /* Make the layout responsive */
-    @media screen and (max-width: 600px) {
-        .search-box {
-            width: 80%;
-        }
+/* Make the layout responsive for small screens */
+@media screen and (max-width: 600px) {
+    .search-box {
+        width: 80%; /* Adjust search box width for mobile */
+    }
 
-        .search-button,
-        .lucky-button {
-            width: 80%;
-        }
+    .search-button,
+    .lucky-button {
+        width: 80%; /* Adjust button width for mobile */
+    }
 
-        .extra-image {
-            max-width: 150px;
-            max-height: 150px;
-        }
-    }}
+    .extra-image {
+        max-width: 150px; /* Reduce size of extra images on small screens */
+        max-height: 150px;
+    }
+}

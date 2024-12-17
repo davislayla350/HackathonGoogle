@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Tamagotchi Pet</title>
   <style>
+    /* General body styling */
     body {
       background-color: #f8f8f8;
       color: #333;
@@ -15,8 +16,9 @@
       padding: 0;
     }
 
+    /* Header styling */
     header {
-      background-color: #FF69B4;
+      background-color: #FF69B4; /* Pink color to match the Tamagotchi theme */
       color: #fff;
       padding: 20px;
       font-size: 2em;
@@ -25,30 +27,34 @@
       text-shadow: 2px 2px 5px #ff1493;
     }
 
+    /* Container for the Tamagotchi pet */
     .pet-container {
       background-color: #FFF;
-      border: 5px solid #FF69B4;
+      border: 5px solid #FF69B4; /* Border matching the header color */
       border-radius: 20px;
       margin-top: 20px;
       padding: 30px;
       width: 300px;
       height: 300px;
       display: inline-block;
-      box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.3); /* Shadow for a 3D effect */
     }
 
+    /* Styling the image of the pet */
     .pet-image {
       width: 100%;
       max-width: 150px;
       margin-bottom: 20px;
     }
 
+    /* Pet status section styling */
     .pet-status {
       margin-bottom: 20px;
     }
 
+    /* Button styling */
     .button {
-      background-color: #FF69B4;
+      background-color: #FF69B4; /* Pink button color */
       color: white;
       border: 2px solid #fff;
       padding: 10px 20px;
@@ -57,15 +63,17 @@
       cursor: pointer;
       margin: 5px;
       border-radius: 10px;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s; /* Smooth transition effect on hover */
     }
 
+    /* Button hover effect */
     .button:hover {
-      background-color: #ff1493;
+      background-color: #ff1493; /* Darker pink on hover */
     }
 
+    /* Footer section styling */
     footer {
-      background-color: #FF69B4;
+      background-color: #FF69B4; /* Matching pink footer */
       color: #fff;
       padding: 20px;
       font-size: 0.9em;
@@ -77,30 +85,37 @@
 </head>
 <body>
 
+<!-- Header for the Tamagotchi Pet page -->
 <header>
   Your Tamagotchi Pet
 </header>
 
+<!-- Pet container section -->
 <div class="pet-container">
+  <!-- Tamagotchi pet image -->
   <img id="petImage" class="pet-image" src="https://c.tenor.com/JxuAP4XU5TgAAAAC/tamagotchi-bandai.gif" alt="Tamagotchi Pet">
+
+  <!-- Pet status (Hunger and Energy levels) -->
   <div class="pet-status">
     <h3>Status: <span id="petStatus">Happy</span></h3>
     <h4>Hunger: <span id="petHunger">100</span>%</h4>
     <h4>Energy: <span id="petEnergy">100</span>%</h4>
   </div>
 
+  <!-- Buttons to interact with the pet -->
   <button class="button" onclick="feedPet()">Feed</button>
   <button class="button" onclick="playWithPet()">Play</button>
   <button class="button" onclick="sleepPet()">Sleep</button>
 </div>
 
+<!-- JavaScript for pet interaction and status updates -->
 <script>
-  // Pet status variables
+  // Initialize pet status variables
   let petHunger = 100;
   let petEnergy = 100;
   let petStatus = "Happy";
 
-  // Update pet status display
+  // Update the pet's status and display changes on the page
   function updateStatus() {
     document.getElementById("petHunger").textContent = petHunger;
     document.getElementById("petEnergy").textContent = petEnergy;
@@ -109,43 +124,43 @@
     // Change pet status based on hunger or energy
     if (petHunger <= 0) {
       petStatus = "Hungry";
-      document.getElementById("petImage").src = "https://c.tenor.com/JxuAP4XU5TgAAAAC/tamagotchi-bandai.gif";  // Use the same GIF or another one for "Hungry"
+      document.getElementById("petImage").src = "https://c.tenor.com/JxuAP4XU5TgAAAAC/tamagotchi-bandai.gif";  // GIF change for hungry state
     } else if (petEnergy <= 0) {
       petStatus = "Tired";
-      document.getElementById("petImage").src = "https://c.tenor.com/JxuAP4XU5TgAAAAC/tamagotchi-bandai.gif";  // Use the same GIF or another one for "Tired"
+      document.getElementById("petImage").src = "https://c.tenor.com/JxuAP4XU5TgAAAAC/tamagotchi-bandai.gif";  // GIF change for tired state
     } else {
       petStatus = "Happy";
-      document.getElementById("petImage").src = "https://c.tenor.com/JxuAP4XU5TgAAAAC/tamagotchi-bandai.gif";  // Use the same GIF for "Happy"
+      document.getElementById("petImage").src = "https://c.tenor.com/JxuAP4XU5TgAAAAC/tamagotchi-bandai.gif";  // Default happy GIF
     }
   }
 
-  // Function to feed the pet
+  // Function to feed the pet (increases hunger and energy)
   function feedPet() {
     if (petHunger < 100) {
-      petHunger += 10;
-      if (petHunger > 100) petHunger = 100;
+      petHunger += 10;  // Increase hunger level
+      if (petHunger > 100) petHunger = 100;  // Prevent hunger from exceeding 100
     }
-    updateStatus();
+    updateStatus();  // Update status display after feeding
   }
 
-  // Function to play with the pet
+  // Function to play with the pet (decreases energy and increases hunger)
   function playWithPet() {
     if (petEnergy > 0) {
-      petEnergy -= 10;
-      petHunger -= 5;
+      petEnergy -= 10;  // Decrease energy level
+      petHunger -= 5;   // Increase hunger slightly after play
     }
-    updateStatus();
+    updateStatus();  // Update status display after playing
   }
 
-  // Function to let the pet sleep
+  // Function to let the pet sleep (restores energy and decreases hunger)
   function sleepPet() {
-    petEnergy = 100;
-    petHunger -= 10;
-    if (petHunger < 0) petHunger = 0;
-    updateStatus();
+    petEnergy = 100;  // Restore energy to full
+    petHunger -= 10;  // Decrease hunger slightly after sleep
+    if (petHunger < 0) petHunger = 0;  // Prevent hunger from going below 0
+    updateStatus();  // Update status display after sleeping
   }
 
-  // Initial status update
+  // Initial status update when the page loads
   updateStatus();
 </script>
 

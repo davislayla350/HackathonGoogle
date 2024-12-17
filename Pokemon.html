@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokémon Retro</title>
     <style>
+        /* General body styling */
         body {
             background-color: #f7f7f7;
             font-family: 'Arial', sans-serif;
@@ -13,21 +14,21 @@
             color: #333;
         }
 
-        /* Window Style */
+        /* Window Style - The main container for the Pokémon game interface */
         .window {
             width: 650px;
             margin: 50px auto;
-            background-color: #ffcb05;
-            border: 5px solid #ff0000;
+            background-color: #ffcb05; /* Yellow background to match Pokémon's color */
+            border: 5px solid #ff0000; /* Red border */
             border-radius: 10px;
-            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5); /* Shadow for a 3D effect */
             padding: 20px;
             position: relative;
         }
 
-        /* Window Header */
+        /* Window Header - Title bar of the Pokémon window */
         .window-header {
-            background-color: #003366;
+            background-color: #003366; /* Dark blue for the title bar */
             color: white;
             padding: 10px;
             font-size: 1.5rem;
@@ -39,20 +40,20 @@
             border-radius: 10px 10px 0 0;
         }
 
-        /* Content Area */
+        /* Content Area - Main section where the Pokémon image and button are placed */
         .content {
             text-align: center;
             font-size: 1.2rem;
-            color: #003366;
+            color: #003366; /* Dark blue text */
             padding: 20px;
-            background-color: #ffffff;
+            background-color: #ffffff; /* White background for the content area */
             margin-top: 20px;
             border-radius: 0 0 10px 10px;
         }
 
-        /* Pokémon Button */
+        /* Pokémon Button - Style for the button that allows the user to choose Bulbasaur */
         .button {
-            background-color: #ff0000;
+            background-color: #ff0000; /* Red button to match the Pokémon theme */
             color: white;
             padding: 12px 20px;
             border: none;
@@ -62,17 +63,18 @@
             margin-top: 20px;
             font-weight: bold;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
         }
 
+        /* Button hover effect */
         .button:hover {
-            background-color: #cc0000;
-            transform: scale(1.05);
+            background-color: #cc0000; /* Darker red on hover */
+            transform: scale(1.05); /* Slightly larger size on hover */
         }
 
-        /* Footer */
+        /* Footer - Displays the footer at the bottom of the page */
         footer {
-            background-color: #003366;
+            background-color: #003366; /* Dark blue footer */
             color: white;
             text-align: center;
             padding: 10px;
@@ -82,19 +84,21 @@
             font-size: 0.9rem;
         }
 
-        /* Pokémon Styling */
+        /* Pokémon Image - Style for the Pokémon image */
         .pokemon-img {
-            width: 200px;
+            width: 200px; /* Set image size */
             height: 200px;
-            border-radius: 10px;
-            margin: 20px auto;
-            transition: transform 0.3s ease;
+            border-radius: 10px; /* Rounded corners for the image */
+            margin: 20px auto; /* Center the image */
+            transition: transform 0.3s ease; /* Smooth zoom effect */
         }
 
+        /* Pokémon image hover effect */
         .pokemon-img:hover {
-            transform: scale(1.1);
+            transform: scale(1.1); /* Slightly enlarge the image on hover */
         }
 
+        /* Title Style */
         .title {
             font-size: 2rem;
             color: #003366;
@@ -107,20 +111,32 @@
 </head>
 <body>
 
+<!-- Main window container -->
 <div class="window">
+    <!-- Window header (Title bar) -->
     <div class="window-header">
         Pokémon - Gotta Catch 'Em All!
     </div>
+
+    <!-- Content area where the Pokémon image and action button are displayed -->
     <div class="content">
+        <!-- Main title of the content -->
         <h2 class="title">Welcome to the Pokémon World!</h2>
+        <!-- Description text -->
         <p>Step back into the world of classic Pokémon. Choose your starter and embark on an adventure!</p>
 
+        <!-- Pokémon image (Bulbasaur) -->
         <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="Bulbasaur" class="pokemon-img">
 
+        <!-- Button to choose Bulbasaur -->
         <button class="button">Choose Bulbasaur!</button>
     </div>
 </div>
 
+<!-- Footer section -->
+<footer>
+    <p>&copy; 2024 Pokémon Retro. All rights reserved.</p>
+</footer>
 
 </body>
 </html>

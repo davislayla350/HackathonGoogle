@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Napster</title>
   <style>
+    /* General body styling */
     body {
       background-color: #111;
       color: #fff;
@@ -13,6 +15,7 @@
       padding: 0;
     }
 
+    /* Header styling */
     header {
       background-color: #000;
       color: #fff;
@@ -23,15 +26,18 @@
       text-shadow: 2px 2px 5px #FF00FF;
     }
 
+    /* Song container section styling */
     .song-container {
       margin-top: 20px;
     }
 
+    /* Heading for Now Playing */
     .song-container h2 {
       color: #00FFFF;
       text-shadow: 0 0 10px #00FFFF;
     }
 
+    /* Styling for each audio player box */
     .audio-player {
       background-color: #222;
       border: 2px solid #00FFFF;
@@ -40,6 +46,7 @@
       border-radius: 8px;
     }
 
+    /* Footer styling */
     footer {
       background-color: #000;
       color: #fff;
@@ -50,23 +57,47 @@
       bottom: 0;
     }
 
+    /* Highlight class for emphasized text */
     .highlight {
       background-color: #FF00FF;
       color: #000;
       font-weight: bold;
       padding: 5px;
     }
+
+    /* Responsive design for smaller screen sizes */
+    @media (max-width: 600px) {
+      /* Make the header font size smaller on mobile */
+      header {
+        font-size: 1.5em;
+      }
+
+      /* Adjust song container width for mobile */
+      .song-container {
+        width: 95%;
+        margin: 0 auto;
+      }
+
+      /* Adjust audio player width for mobile */
+      .audio-player {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
   </style>
 </head>
 <body>
 
+<!-- Main header section -->
 <header>
   Napster-Inspired Music Player
 </header>
 
+<!-- Song container section with music players -->
 <div class="song-container">
   <h2>Now Playing</h2>
 
+  <!-- First audio player for Christina Aguilera -->
   <div class="audio-player">
     <h3>Christina Aguilera - What a Girl Wants</h3>
     <audio controls>
@@ -75,6 +106,7 @@
     </audio>
   </div>
 
+  <!-- Second audio player for Destiny's Child -->
   <div class="audio-player">
     <h3>Destiny's Child - Say My Name</h3>
     <audio controls>
@@ -83,6 +115,7 @@
     </audio>
   </div>
 
+  <!-- Third audio player for Owl City -->
   <div class="audio-player">
     <h3>Owl City - Fireflies</h3>
     <audio controls>
@@ -91,6 +124,7 @@
     </audio>
   </div>
 
+  <!-- Fourth audio player for Santana -->
   <div class="audio-player">
     <h3>Santana - Smooth</h3>
     <audio controls>
@@ -100,12 +134,10 @@
   </div>
 </div>
 
-
-</body>
-</html>
-</title>
-</head>
-<body>
+<!-- Footer section -->
+<footer>
+  <p>&copy; 2024 Napster-Inspired Music Player. All rights reserved.</p>
+</footer>
 
 </body>
 </html>

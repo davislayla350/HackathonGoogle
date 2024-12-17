@@ -5,127 +5,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Windows 98 Retro</title>
     <style>
+        /* General body styles */
         body {
-            background-color: #008080;
-            font-family: 'Tahoma', sans-serif;
+            background-color: #008080; /* Teal background to simulate Windows 98 color scheme */
+            font-family: 'Tahoma', sans-serif; /* Classic Windows font */
             margin: 0;
             padding: 0;
-            color: #000;
-            overflow: hidden; /* Prevent scrolling */
+            color: #000; /* Default text color */
+            overflow: hidden; /* Prevent scrolling to keep the retro look */
         }
 
+        /* Styling for the error containers (the pop-up windows) */
         .error-container {
-            width: 150px;
-            height: 100px;
-            background-color: #ffcccb;
-            border: 2px solid #ff0000;
-            border-radius: 5px;
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: #000;
-            z-index: 5; /* Ensure it appears above the window */
+            width: 150px; /* Set width of each error box */
+            height: 100px; /* Set height of each error box */
+            background-color: #ffcccb; /* Light red background for the error box */
+            border: 2px solid #ff0000; /* Red border to make the box stand out */
+            border-radius: 5px; /* Slightly round the corners */
+            position: absolute; /* Positioning the boxes absolutely within the body */
+            display: flex; /* Use flexbox to align text and emoji */
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            font-size: 12px; /* Smaller text size */
+            color: #000; /* Black text color */
+            z-index: 5; /* Ensure the error containers appear above other content */
         }
 
+        /* Styling for the emoji inside the error boxes */
         .error-face {
-            font-size: 24px;
+            font-size: 24px; /* Larger size for the emoji */
         }
     </style>
 </head>
 <body>
 
-<!-- Multiple 404 Error Containers scattered all over the screen -->
+<!-- Multiple 404 Error Containers scattered across the screen -->
+
+<!-- First error box, positioned at the top-left -->
 <div class="error-container" style="top: 10px; left: 10px;">
-    <div class="error-face">😵</div>
-    <div>404 Not Found</div>
+    <div class="error-face">😵</div> <!-- Emoji representing confusion or frustration -->
+    <div>404 Not Found</div> <!-- Text message for the error -->
 </div>
+
+<!-- Second error box, positioned further down and right -->
 <div class="error-container" style="top: 50px; left: 500px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
+<!-- Third error box, positioned lower left -->
 <div class="error-container" style="top: 100px; left: 400px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
+<!-- Additional error boxes placed all over the screen -->
 <div class="error-container" style="top: 150px; left: 100px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
 <div class="error-container" style="top: 200px; left: 300px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
 <div class="error-container" style="top: 250px; left: 50px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
 <div class="error-container" style="top: 300px; left: 450px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
 <div class="error-container" style="top: 350px; left: 150px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
 <div class="error-container" style="top: 400px; left: 250px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
 <div class="error-container" style="top: 450px; left: 350px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
+<!-- More error boxes scattered around the page -->
 <div class="error-container" style="top: 20px; left: 500px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
 <div class="error-container" style="top: 75px; left: 300px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
 <div class="error-container" style="top: 125px; left: 150px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
 <div class="error-container" style="top: 175px; left: 500px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
 <div class="error-container" style="top: 225px; left: 200px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
 <div class="error-container" style="top: 275px; left: 450px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
 <div class="error-container" style="top: 325px; left: 275px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
 <div class="error-container" style="top: 375px; left: 350px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
 <div class="error-container" style="top: 425px; left: 100px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
 <div class="error-container" style="top: 475px; left: 250px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
+<!-- Final set of error boxes -->
 <div class="error-container" style="top: 25px; left: 300px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
 <div class="error-container" style="top: 90px; left: 450px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
 </div>
+
 <div class="error-container" style="top: 150px; left: 50px;">
     <div class="error-face">😵</div>
     <div>404 Not Found</div>
